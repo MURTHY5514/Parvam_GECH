@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,38 @@
 </head>
 
 <body>
-    <h1>Home page</h1>
+    <h1>List of students</h1>
+    <a th:href="@{/add-student}">Add Student</a>
+    <div th:if="${success}">
+        <p th:text="${success}"></p>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="student : ${students}">
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.name}"></td>
+                <td>
+                	<img alt="image" width="100px" height="100px" th:src="@{'images/'+${student.imagePath}}">
+                </td>
+                <td th:text="${student.age}"></td>
+                <td th:text="${student.email}"></td>
+                <td>
+                    <a th:href="@{/std-edit(id=${student.id})}">Edit</a>
+                    <a th:href="@{/std-delete(id=${student.id})}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 
 </html>

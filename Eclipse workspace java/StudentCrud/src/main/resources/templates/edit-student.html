@@ -8,8 +8,9 @@
 </head>
 
 <body style="margin: 100px;">
-    <h1>Add Student</h1>
-    <form th:action="@{/add-student}" enctype="multipart/form-data" method="post" th:object="${studentDTO}">
+    <h1>Edit Student</h1>
+    <form th:action="@{/edit-student(id=${student.id})}" enctype="multipart/form-data" method="post"
+        th:object="${studentDTO}">
         <label for="name">Name</label>
         <input type="text" th:field="*{name}" id="name" placeholder="Enter your name"> <br>
 
@@ -27,10 +28,11 @@
         <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
 
         <label for="image">Image</label>
+        <img alt="image" height="100px" width="100px" th:src="@{'images/'+${student.imagePath}}"> <br>
         <input type="file" id="image" th:field="*{image}"> <br>
         <p th:if="${#fields.hasErrors('image')}" th:errors="*{image}"></p>
 
-        <input type="submit" value="Add Student">
+        <input type="submit" value="Edit Student">
     </form>
 </body>
 
