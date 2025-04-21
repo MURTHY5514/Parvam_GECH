@@ -1,5 +1,6 @@
 package com.gec_student_crud.StudentCrud.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,6 +15,7 @@ public class Student {
 	private long id;
 	private String name;
 	private int age;
+	@Column(unique = true)
 	private String email;
 	private String password;
 	private String imagePath;

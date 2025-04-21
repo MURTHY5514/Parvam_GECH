@@ -16,4 +16,9 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 	 * 3. to delete data -> deleteById(id);/ delete(object)
 	 * 4. to create or update data -> save(object)
 	 * */
+	/*
+	 * findBy -> an object
+	 * existBy -> boolean
+	 * */
+	public Student findByEmail(String email);
 }
