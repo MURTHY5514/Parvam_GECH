@@ -39,3 +39,5 @@ How to override the default spring security default flow:
 1. create a class and annotate with @Configuration.
 2. in this class create a bean of UserDetailsService and PasswordEncoder.
 3. Inside the userdetailsservice craete a user using User class.
+
+InMemoryUserDetailsManager

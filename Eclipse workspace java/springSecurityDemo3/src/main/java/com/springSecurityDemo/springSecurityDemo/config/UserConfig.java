@@ -15,6 +15,7 @@ public class UserConfig {
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
+	
 	@Bean
 	public UserDetailsService userDetailsService() {
 	  UserDetails user1	= User.withUsername("pavan")

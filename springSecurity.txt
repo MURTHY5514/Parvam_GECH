@@ -120,7 +120,6 @@ UsernamePasswordAuthenticationFilter
 * it will take a request from FilterChainProxy or Servlet Container.
 * the job of AbstractAuthenticationProcessingFilter is to modify the http request into authenticated request and will pass to AuthenticationManager.
 
-
 * the main goal of sprig secirty is to create a store the authentication object in securityContext.
 
 SecurityContextHolder :
