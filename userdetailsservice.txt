@@ -41,3 +41,8 @@ How to override the default spring security default flow:
 3. Inside the userdetailsservice craete a user using User class.
 
 InMemoryUserDetailsManager
+
+
+UserDetailsService:
+===================
+* it is an interface it contain one method "loadUserByUsername"
