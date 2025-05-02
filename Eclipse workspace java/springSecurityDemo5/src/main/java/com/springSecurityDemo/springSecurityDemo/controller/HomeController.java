@@ -43,6 +43,16 @@ public class HomeController {
 	public String register(@ModelAttribute StudentDTO studentDTO, RedirectAttributes redirectAttributes) {
 		studentService.storeStudent(studentDTO);
 		redirectAttributes.addFlashAttribute("success","Student saved succesfully");
-		return "redirect:/";
+		return "redirect:/login";
 	}
+	@GetMapping("/std-details")
+	public String std(){
+		return "std-details";
+	}
+	
+	@GetMapping("/login")
+	public String login() {
+		return "login";
+	}
+	
 }
