@@ -7,27 +7,19 @@ import com.springSecurityDemo.springSecurityDemo.dto.StudentDTO;
 import com.springSecurityDemo.springSecurityDemo.model.Student;
 import com.springSecurityDemo.springSecurityDemo.repository.StudentRepo;
 
-import jakarta.mail.MessagingException;
-
 @Service
 public class StudentService {
 
 	private StudentRepo studentRepo;
 	private PasswordEncoder passwordEncoder;
-	private EmailService emailService;
 
-	
-
-	public StudentService(StudentRepo studentRepo, PasswordEncoder passwordEncoder, EmailService emailService) {
+	public StudentService(StudentRepo studentRepo, PasswordEncoder passwordEncoder) {
 		super();
 		this.studentRepo = studentRepo;
 		this.passwordEncoder = passwordEncoder;
-		this.emailService = emailService;
 	}
 
-
-
-	public void storeStudent(StudentDTO studentDTO) throws MessagingException {
+	public void storeStudent(StudentDTO studentDTO) {
 		Student student = new Student();
 
 		student.setName(studentDTO.getName());
@@ -35,7 +27,5 @@ public class StudentService {
 		student.setPassword(passwordEncoder.encode(studentDTO.getPassword()));
 		student.setRole("ROLE_USER");
 		studentRepo.save(student);
-		
-		emailService.sendEmail(studentDTO.getEmail(),studentDTO.getEmail(),studentDTO.getPassword(), studentDTO.getName());
 	}
 }

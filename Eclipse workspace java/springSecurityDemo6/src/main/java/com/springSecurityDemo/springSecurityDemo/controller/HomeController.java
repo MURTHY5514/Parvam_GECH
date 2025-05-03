@@ -40,15 +40,9 @@ public class HomeController {
 		return "register";
 	}
 	@PostMapping("/register")
-	public String register(@ModelAttribute StudentDTO studentDTO, RedirectAttributes redirectAttributes, Model model) {
-		try {
-			studentService.storeStudent(studentDTO);
-			redirectAttributes.addFlashAttribute("success","Student saved succesfully");
-		} catch (Exception e) {
-			model.addAttribute("error","Failed to send email");
-			return "registration";
-		}
-		
+	public String register(@ModelAttribute StudentDTO studentDTO, RedirectAttributes redirectAttributes) {
+		studentService.storeStudent(studentDTO);
+		redirectAttributes.addFlashAttribute("success","Student saved succesfully");
 		return "redirect:/login";
 	}
 	@GetMapping("/std-details")
@@ -60,19 +54,4 @@ public class HomeController {
 	public String login() {
 		return "login";
 	}	
-	
-	@GetMapping("/user")
-	public String user() {
-		return "user";
-	}
-	
-	@GetMapping("/admin")
-	public String admin() {
-		return "admin";
-	}
-	@GetMapping("/error")
-	public String error() {
-		return "error";
-	}
-	
 }

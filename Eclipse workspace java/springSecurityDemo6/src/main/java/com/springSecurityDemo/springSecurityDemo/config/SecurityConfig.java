@@ -17,15 +17,12 @@ import static org.springframework.security.config.Customizer.withDefaults;
 public class SecurityConfig {
 	
 	private StudentRepo studentRepo;
-	private CustomSuccessHandler customSuccessHandler;
 	
 
-	public SecurityConfig(StudentRepo studentRepo, CustomSuccessHandler customSuccessHandler) {
+	public SecurityConfig(StudentRepo studentRepo) {
 		super();
 		this.studentRepo = studentRepo;
-		this.customSuccessHandler = customSuccessHandler;
 	}
-
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
@@ -50,25 +47,18 @@ public class SecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		return http
 				.authorizeHttpRequests(auth-> auth
-						//.requestMatchers("/user").hasRole("USER")
-						.requestMatchers("/user").hasAnyRole("USER","ADMIN")
-						.requestMatchers("/admin").hasRole("ADMIN")
 						.requestMatchers("/","/about","/contact","/register").permitAll()
 						.anyRequest().authenticated()
 						)
 				.formLogin(login -> login
 						.loginPage("/login")
 						.loginProcessingUrl("/login")
-						//.defaultSuccessUrl("/std-details",true)
-						.successHandler(customSuccessHandler)
+						.defaultSuccessUrl("/std-details",true)
 						.permitAll()
 						)
 				.logout(logout->logout
 						.logoutSuccessUrl("/login?logout")
 						.permitAll())
-				.exceptionHandling(
-						exp -> exp.accessDeniedPage("/error")
-						)
 				.build();
 	}
 }
