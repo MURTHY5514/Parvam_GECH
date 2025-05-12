@@ -8,4 +8,3 @@
 8. Rest API in Spring boot.
 9. How to test by using postman.
 10. How to use Jquery(Js library)in Spring boot(to create a CRUD without reaload web page).
-11. Ecommerce we app - if possible(multiple roles)

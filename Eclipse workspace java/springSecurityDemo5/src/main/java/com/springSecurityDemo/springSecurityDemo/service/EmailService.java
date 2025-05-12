@@ -27,8 +27,11 @@ public class EmailService {
 		context.setVariable("name",name);
 		context.setVariable("username",email);
 		context.setVariable("password",password);
+		 // Construct login URL (adjust base URL as needed)
+	    String loginUrl = "http://localhost:8080/login";  // or your domain: https://myapp.com/login
+	    context.setVariable("loginUrl", loginUrl);
 		
-		String htmlbody =  templateEngine.process("registration-email", context);
+		String htmlbody =  templateEngine.process("registration_email", context);
 		
 		MimeMessage message = mailSender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(message,true);
