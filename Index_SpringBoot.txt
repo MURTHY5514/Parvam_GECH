@@ -8,20 +8,3 @@
 8. Rest API in Spring boot.
 9. How to test by using postman.
 10. How to use Jquery(Js library)in Spring boot(to create a CRUD without reaload web page).
-
-
-
-#hello{
-	color:blue;
-}
-div{
-	color:red;
-}
-.hello1{
-	color:green;
-}
-
-<div id="hello" class="hello1">hello</div>
-
-
-inline > id > class > element
