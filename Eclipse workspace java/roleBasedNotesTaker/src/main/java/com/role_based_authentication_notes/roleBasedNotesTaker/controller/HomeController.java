@@ -25,6 +25,7 @@ public class HomeController {
 	}
 	@GetMapping("/register")
 	public String registration(Model model) {
+		System.out.println("1234567898765432123456");
 		model.addAttribute("userDTO", new UserDTO());
 	    return "registration"; // Returns the view named "register.html"
 	}

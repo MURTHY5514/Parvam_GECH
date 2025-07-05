@@ -54,6 +54,7 @@ public class UserController {
 
 	@PostMapping("/register")
 	public String register(@Validated(OnCreate.class) @ModelAttribute UserDTO userDTO, BindingResult result, RedirectAttributes attributes) {
+		System.out.println("1111111111111111111");
 		Optional<User> user = userRepository.findByEmail(userDTO.getEmail());
 		if(user.isPresent()) {
 			result.addError(
