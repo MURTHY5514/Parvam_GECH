@@ -39,6 +39,7 @@ components:
 6. AuthenticationProvider
 7. AuthenticationEntryPoint
 8. AbstractAuthenticationProcessingFilter 
+9. AuthenticationManager
 
 
 1. SecurityContext:
@@ -58,7 +59,7 @@ JwtAuthenticationToken, OAuth2LoginAuthenticationToken,
 UsernamePasswordAuthenticationToken
 
 3. AuthenticationManager:
-==========================
+=========================
 * it is also an Functional Interface present inside "org.springframework.security.authentication" package.
 * when we are talking about AuthenticationManager we are taking about its implementing classes.
 * it has only one method called "authenticate".
@@ -73,8 +74,8 @@ fully authentication object:
 ============================
 it contains
 
-1.Principal - Means user information email,name, expriation
-2. credentials - password (after authenticateduser it will be null, for security reasons)
+1. Principal - Means user information email,name, expriation
+2. credentials - password (after authenticated user it will be null, for security reasons)
 3. authorities - roles
 
 
@@ -125,3 +126,9 @@ UsernamePasswordAuthenticationFilter
 SecurityContextHolder :
 =======================
 * it is a warpper around securityContext.
+
+
+
+
+
+district, nearest land mark, address2, imgae , shop image
