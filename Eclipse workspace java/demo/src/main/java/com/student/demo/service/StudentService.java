@@ -1,0 +1,48 @@
+package com.student.demo.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.student.demo.dto.StudentDTO;
+import com.student.demo.model.Student;
+import com.student.demo.repository.StudentRepository;
+
+@Service
+public class StudentService {
+	
+	private StudentRepository studentRepo;
+
+	public StudentService(StudentRepository studentRepo) {
+		super();
+		this.studentRepo = studentRepo;
+	}
+	
+	public List<Student> getAllStudent() {
+		List<Student> student = studentRepo.findAll();
+		return student;
+	}
+
+	public void saveStudent(StudentDTO studentDTO) {
+		Student student = new Student();
+		student.setName(studentDTO.getName());
+		student.setEmail(studentDTO.getEmail());
+		student.setAddress(studentDTO.getAddress());
+		studentRepo.save(student);
+	}
+	public Student getStudent(Integer id) {
+		return studentRepo.findById(id).orElseThrow(()->new RuntimeException("Student with id  not found:"+id));
+	}
+	
+	public void updatestudent(StudentDTO studentdto, Integer id) {
+		Student student = studentRepo.findById(id).get();
+		student.setName(studentdto.getName());
+		student.setEmail(studentdto.getEmail());
+		student.setAddress(studentdto.getAddress());
+		studentRepo.save(student);
+	}
+	public void delete(Integer Id) {
+		Student student= studentRepo.findById(Id).get();
+		studentRepo.delete(student);
+	}
+}

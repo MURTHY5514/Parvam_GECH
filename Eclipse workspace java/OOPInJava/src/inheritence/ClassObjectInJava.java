@@ -21,13 +21,14 @@ public class ClassObjectInJava {
 		/*
 		 * class:
 		 * ======
-		 * * class will represent the state and behaviour of an object
+		 * * class will represent the state and behavior of an object
 		 * state -> property
-		 * beha --> action
+		 * behavior --> action
 		 * 
 		 * Object:
 		 * =======
 		 * * Object is a implementation of class(state and action)
+		 * 
 		 * example:
 		 * ========
 		 * Student

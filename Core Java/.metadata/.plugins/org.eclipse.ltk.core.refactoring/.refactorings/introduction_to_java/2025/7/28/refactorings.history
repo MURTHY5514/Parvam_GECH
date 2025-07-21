@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;Loopingstatement&apos; to &apos;loopingstatement&apos;&#x0D;&#x0A;- Original project: &apos;introduction_to_java&apos;&#x0D;&#x0A;- Original element: &apos;introduction_to_java/src/Loopingstatement&apos;&#x0D;&#x0A;- Renamed element: &apos;introduction_to_java/src/loopingstatement&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;Loopingstatement&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;Loopingstatement" name="loopingstatement" qualified="false" references="true" stamp="1752231363188" textual="false" version="1.0"/>
+</session>
