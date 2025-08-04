@@ -42,7 +42,8 @@ public class StudentService {
 		studentRepo.save(student);
 	}
 	public void delete(Integer Id) {
-		Student student= studentRepo.findById(Id).get();
-		studentRepo.delete(student);
+//		Student student= studentRepo.findById(Id).get();
+//		studentRepo.delete(student);
+		studentRepo.deleteById(Id);
 	}
 }

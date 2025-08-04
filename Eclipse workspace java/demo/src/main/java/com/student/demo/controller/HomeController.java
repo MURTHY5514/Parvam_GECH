@@ -51,15 +51,11 @@ public class HomeController {
 		studentDTO.setAddress(student.getAddress());
 		model.addAttribute("studentDTO", studentDTO);
 		model.addAttribute("student",student);
-		
-		
 		return "edit-student";
-		
-		
 	}
 	
 	@PostMapping("/update-student")
-	public String update(@ModelAttribute StudentDTO studentdto, Integer id) {
+	public String update(@ModelAttribute StudentDTO studentdto, @RequestParam Integer id) {
 		studentService.updatestudent(studentdto, id);
 		return "redirect:/";
 	}

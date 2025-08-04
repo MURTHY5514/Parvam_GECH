@@ -31,12 +31,12 @@ public class ClassObjectInJava {
 		 * 
 		 * example:
 		 * ========
-		 * Student
+		 * Student 
 		 * 
 		 * property:
 		 * =========
-		 * USN
-		 * name
+		 * USN  
+		 * name 
 		 * branch
 		 * age
 		 * 
