@@ -17,9 +17,10 @@ public class CollectionInJava {
 		 * =======================
 		 * 1. random access
 		 * 2. type safety - the elements inside the array is based on the data type.
-		 * 3. type casting - to print elements in array s=no need to type cast.
+		 * 3. type casting - to print elements in array no need to type cast.
 		 * 
-		 * 
+		 * Also we can store more than one data type using Object Array
+		 * Object[] arr = new Object[5];
 		 * */
 		
 		int [] arr = new int [2];

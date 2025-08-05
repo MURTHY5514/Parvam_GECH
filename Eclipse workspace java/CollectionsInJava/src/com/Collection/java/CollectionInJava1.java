@@ -7,7 +7,7 @@ public class CollectionInJava1 {
 	public static void main(String[] args) {
 		/*
 		 * Collection --> root interface in collection framework
-		 * Collections --> it will provide some of the utility methods to work qith collection
+		 * Collections --> it will provide some of the utility methods to work with collection
 		 * 
 		 * Collection:
 		 * ===========
