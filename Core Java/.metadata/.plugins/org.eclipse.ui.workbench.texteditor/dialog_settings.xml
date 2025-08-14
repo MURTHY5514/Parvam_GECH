@@ -3,6 +3,18 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<section name="java.lang.Class">
 		<list key="findhistory">
+			<item value="fore"/>
+			<item value="forEac"/>
+			<item value="put("/>
+			<item value="put"/>
+			<item value="sort("/>
+			<item value="sort"/>
+			<item value="valueOf"/>
+			<item value="enu"/>
+			<item value="get("/>
+			<item value="get"/>
+			<item value="add("/>
+			<item value="add"/>
 			<item value="equals"/>
 			<item value="var4"/>
 			<item value="Scanner"/>

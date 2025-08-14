@@ -31,17 +31,6 @@ public class LinkedListInJava {
 		 * 
 		 * * when ever there is a continuous operation on deletion we should go for linked list
 		 * * when ever there is a continuous operation on deletion then we should not go for array list
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
 		 * */
 	}
 }

@@ -16,7 +16,6 @@ public class SetInterfaceDemo {
 		 *   
 		 *   1. order is not preserved
 		 *   2. duplicate will not allow
-		 *   3. random access is the there
 		 * */
 		
 		Set<Integer> set = new HashSet<Integer>();
