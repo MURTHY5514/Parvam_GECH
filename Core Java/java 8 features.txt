@@ -1,0 +1,134 @@
+Java 8 features:
+================
+1. lambda expressions
+2. functional interface
+3. predicate
+4. comsumer
+5. supplier
+6. Function
+7. stream API
+
+lambda expressions:
+===================
+1. it also called anonymous function(without name).
+2. there is no return type
+3. there is no access modifiers
+
+1. 
+public int add(int a , int b){
+	return a+b;
+}
+(int a, int b)->{
+	return a+b;
+}
+
+2. 
+public int findLength(String s){
+	return s.length();
+}
+
+(String s )-> { return s.length()}
+
+3. 
+public void print(){
+	syso("Hello world");
+}
+
+()->{syso("Hello world")}
+
+
+Important points:
+=================
+1. no need to specifiy the type of the data
+(a,b)->{
+	return a+b;
+}
+2. if the statment is single line then not require of {} and return
+	(String s )-> { 
+		return s.length()
+	}
+	(s)->s.length()
+	
+3. if you are passing the single paratmater then no nedd to ()
+	s->s.length()
+
+4. if there is no parameter then () is must.
+	()->{syso("Hello world")}
+
+5. if there is a multiple parameter then it need to seperate by ,
+	(a,b)->a+b
+
+
+functional interface:
+=====================
+* Interface containn only one abstract method.
+
+example: comparator.
+* @FunctionalInterface -> functional interface
+
+
+Method Reference 
+Constructor Reference
+
+
+Method Reference :
+==================
+They are a shorthand syntax for lambda expressions that perform a single action.
+
+Types:
+======
+1. Static Method Reference:
+===========================
+Syntax: ClassName::staticMethodReference
+
+2. Instance Method Reference of a Particular Object:
+====================================================
+Syntax: ObjName::instanceMethodReference
+
+3. Instance Method Reference of an Arbitrary Object of a Particular Type:
+========================================================
+Syntax: ClassName::instanceMethodReference
+
+
+
+Constructor Reference:
+======================
+They are a shorthand syntax for lambda expressions that perform a single action.
+
+Syntax: ClassName::new
+
+
+collection:
+===========
+* to represent a group of individual objects as a single entity then we should go for collection.
+
+
+
+streams:
+========
+* to work with multiple objects or collection then we should go for streams
+
+1. source:
+==========
+* on which you are applying the stream
+List<Integer> list = new ArrayList<>();
+list.stream();
+
+2. intermidiate operation:
+==========================
+* the opeartion will return the another stream, lazy opeartion
+
+3. termination operation:
+=========================
+* it will terminate the stream
+* after applyig the termination opeartion on streams we cannot reuse it.
+* for each stream we can use only one termination operation.
+
+example:
+========
+List<Integer> list = new ArrayList<>();
+list.add(12);
+list.add(10);
+list.add(21);
+
+list.stream().filter(x->x%2==0).count();

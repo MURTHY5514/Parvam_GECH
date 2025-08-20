@@ -1,5 +1,7 @@
 package com.predefinedFunctionalInterface;
 
+import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.function.Supplier;
 
@@ -10,8 +12,8 @@ public class SupplierInJava {
 		 * =========
 		 * it won't take anything but it will return the value.
 		 * */
-		Supplier<Date> s = ()->new Date();
-		Date date = s.get();
+		Supplier<LocalDate> s = ()->LocalDate.now();
+		LocalDate date = s.get();
 		System.out.println(date);
 	}
 }
