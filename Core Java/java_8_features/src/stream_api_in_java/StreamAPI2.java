@@ -1,7 +1,10 @@
 package stream_api_in_java;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 public class StreamAPI2 {
@@ -12,7 +15,7 @@ public class StreamAPI2 {
 			    .flatMap(c->c.stream()) // Flattens the stream of lists into a stream of integers
 			    .collect(Collectors.toList());
 		System.out.println("After: "+flattenedList);
-		
+
 		/*
 		 * 1. Sort the list of numbers in Descending order
 		 * 2. Remove the Duplicate elements from list
