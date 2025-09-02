@@ -1,0 +1,4 @@
+
+dbname: parvam_rcc_erp_db
+username: parvam_rccbengaluruerp
+password: wPLCqmky*vxh

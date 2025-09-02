@@ -1,0 +1,14 @@
+git lab  -> preferences -> ssh keys -> 
+
+
+git bash -> ssh-keygen -t rsa -c 'your email id'
+
+
+after generating
+
+git lab -> add key  and paste the key 
+
+after that 
+
+source tree -> craete or import ssh keys -> load -> id_rsa -> save private key ->close
+
