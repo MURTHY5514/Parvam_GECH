@@ -1,0 +1,129 @@
+Spring:
+=======
+disadvantages:
+==============
+1. xml based configuration
+2. external tomcat
+3. lot of configuration related to web, security and data jpa.
+
+Spring boot:
+============
+Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run".
+
+create a spring boot project:
+=============================
+3 ways to create a spring boot project:
+=======================================
+1. spring initializer.
+2. extention in eclipse.
+3. by using sts.
+
+java object:
+============
+
+
+Bean object:
+============
+* Bean is an java object.
+* when the object is creating and maintained  by the ioc container or sring we called bean
+
+Create Bean Object:
+===================
+1.@Bean:
+========
+* this annotation is used to create a bean
+* This annotation is used on top of method inside the configuration class.
+
+
+configuration class:
+====================
+* if you declare an annotation "@Configuration" then that class called configuration class.
+
+
+2.@Component:
+=============
+* this annotation is used on top of class.
+
+
+
+
+@SpringBootApplication:
+=======================
+It is the combination
+1. @Configuration
+2. @ComponentScan - base package
+3. @EnableAutoConfiguration
+
+
+Spring Boot taking control of creating object by the programmer hence we called it has IOC(Inversion of Control)
+
+IOC Container:
+==============
+* This container will create, manage, and maintain the spring beans.
+
+Creation of Ioc Container:
+==========================
+1. ApplicationContext - we use this to create ioc container.
+* it is a child interface of you bean factory.
+2. BeanFactory
+
+
+Dependency Object:
+==================
+* one object depends on another.
+ex:
+===
+	Employee  --> Address
+	
+To achive the dependency:
+=========================
+1. field injection - we need field  / instance variable
+2. setter injection - we need setter method
+3. constructor injection - we need constructor
+
+
+Dependency Injection:
+=====================
+* Dependency injection is possible b/w two bean objects.
+
+1. field injection:
+===================
+@Autowired
+* you ahve to declare this annotation on top of filed
+
+@Qualifier:
+===========
+* As a programmer should know whichobject need to insert
+* this annotation is used along with @Autowird
+
+@Primary:
+=========
+* to insert default object 
+
+2. Setter injection:
+====================
+@Autowired
+* you ahve to declare this annotation on top of filed
+
+@Qualifier:
+===========
+* As a programmer should know whichobject need to insert
+* this annotation is used along with @Autowird
+
+@Primary:
+=========
+* to insert default object 
+
+3. Constructor injection:
+====================
+@Autowired
+* you ahve to declare this annotation on top of filed
+
+@Qualifier:
+===========
+* As a programmer should know whichobject need to insert
+* this annotation is used along with @Autowird
+
+@Primary:
+=========
+* to insert default object 
