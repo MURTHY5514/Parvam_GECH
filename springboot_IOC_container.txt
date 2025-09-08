@@ -115,7 +115,7 @@ Dependency Injection:
 * to insert default object 
 
 3. Constructor injection:
-====================
+=========================
 @Autowired
 * you ahve to declare this annotation on top of filed
 
@@ -126,4 +126,63 @@ Dependency Injection:
 
 @Primary:
 =========
-* to insert default object 
+* to insert default object. 
+* we need to use along with @Component or @bean.
+
+DI with Interfaces:
+===================
+* we can hold the child object with parent reference.
+ex:
+===
+class Parent{
+}
+
+class Child extends Parent{
+}
+
+main(){
+	Child child = new Child();
+	Parent parent = new Child(); // dynamic polymorphism
+}
+
+ex:
+===
+interface PaymentService{
+	
+}
+
+class NetBankingPaymentService implements PaymentService{
+}
+
+main(){
+	NetBankingPaymentService net = new NetBankingPaymentService();
+	PaymentService pay = new NetBankingPaymentService();
+}
+
+@value:
+=======
+* to insert the default values for primitive types.
+
+@Component
+class Student{
+	@value("${student.name}")
+	String name;
+	@value("23")
+	int age;
+	@Autowired
+	Address address
+}
+
+* we can you this annotation in field, constructor and methods.
+* by using this annotation we can get the values from application.properties file.
+	syntax:
+	=======
+	@value("${property name}")
+	@value("${spring.application.name}")
+	
+application.properties:
+=======================
+student.marks={"kannada":"120","English":"100"}
+
+@Value("#{${student.marks}}")
+private Map<String, Integer> marks;
