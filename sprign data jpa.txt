@@ -22,7 +22,7 @@ JPA ---> hibernate ---> spring data jpa ----> database
 3. repository
 4. how to map entity class with jparepository
 5. craete a db
-6. we need giev credential of db in application.properties
+6. we need give credential of db in application.properties
 
 		spring.datasource.url=jdbc:mysql://localhost:3306/student_crud
 		spring.datasource.username=root
@@ -69,7 +69,25 @@ repository:
 	2. jpa repository (I)
 	
 
-
-
-
+ddl-auto=true in console:
+=========================
 Hibernate: create table studnet_detail (std_id integer not null auto_increment, std_age integer, std_email varchar(255), std_name varchar(255), primary key (std_id)) engine=InnoDB
+
+
+methods:
+========
+1. save() --> insert/update
+2. findById()  --> where std_id=?
+3. deleteById() --> where std_id=?
+4. delete() --> an entity
+5. findAll() --> select
+
+findBy methods:
+===============
+syntax:
+=======
+findBy<java property name>(java parameters)
+
+findByEmail(String email);
+
+* inside the repository layer
