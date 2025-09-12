@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Create User</h1>
+    <form method="post" th:object="${userDTO}" th:action="@{'/add-user'}" novalidate>
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}" required placeholder="Enter your name"> <br>
+        <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red;"></p>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" th:field="*{email}" required placeholder="Enter your email"> <br>
+        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;"></p>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" th:field="*{password}" required placeholder="Enter your password"> <br>
+        <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red;"></p>
+
+        <button type="submit">Create</button>
+    </form>
+</body>
+
+</html>

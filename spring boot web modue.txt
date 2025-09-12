@@ -18,3 +18,5 @@ xmlns:th="http://www.thymeleaf.org" inside html tag
 1. new 
 2. mapper
 3. builder
+
+* to send errors to front end we use " BindingResult bindingResult"

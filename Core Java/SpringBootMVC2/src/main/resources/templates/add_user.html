@@ -9,7 +9,7 @@
 
 <body>
     <h1>Create User</h1>
-    <form method="post" th:object="${userDTO}" th:action="@{'/add-user'}">
+    <form method="post" th:object="${userDTO}" th:action="@{'/add-user'}" novalidate>
         <label for="name">Name:</label>
         <input type="text" id="name" th:field="*{name}" required placeholder="Enter your name"> <br>
 
