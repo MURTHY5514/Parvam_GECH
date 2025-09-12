@@ -1,0 +1,20 @@
+WEB module:
+===========
+
+MVC:
+====
+* Model View COntroller
+
+@Controller ----> return view
+@RestController --> String
+
+How to use tymleaf:
+===================
+xmlns:th="http://www.thymeleaf.org" inside html tag
+
+
+* to covert from DTO to model or model to DTO:
+==============================================
+1. new 
+2. mapper
+3. builder

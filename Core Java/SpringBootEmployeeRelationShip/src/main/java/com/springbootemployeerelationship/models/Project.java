@@ -22,6 +22,7 @@ public class Project {
 	public Project() {
 		super();
 	}
+	
 	public Project(long id, String name, List<Employee> employees) {
 		super();
 		this.id = id;

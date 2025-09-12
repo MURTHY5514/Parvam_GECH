@@ -3,6 +3,7 @@ package com.springbootemployeerelationship.models;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -23,15 +24,15 @@ public class Employee {
 	private String email;
 	private String password;
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "address_id")
 	private Address address;
 	
-	@ManyToOne
+	@ManyToOne(fetch =  FetchType.LAZY)
 	@JoinColumn(name = "department_id")
 	private Department department;
 	
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(
 			name = "employee_project",
 			joinColumns = @JoinColumn(name="employee_id"),

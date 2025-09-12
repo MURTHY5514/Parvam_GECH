@@ -66,10 +66,10 @@ repository:
 * also called as DAO (Data Access object).
 * spring data jpa 
 	1. crud repository (I)
-	2. jpa repository (I)
+	2. jpa repository (I) - pagination and sorting
 	
 
-ddl-auto=true in console:
+ddl-auto=upadte in console:
 =========================
 Hibernate: create table studnet_detail (std_id integer not null auto_increment, std_age integer, std_email varchar(255), std_name varchar(255), primary key (std_id)) engine=InnoDB
 
@@ -86,8 +86,18 @@ findBy methods:
 ===============
 syntax:
 =======
-findBy<java property name>(java parameters)
+findBy<java property name>(java property datatype java parameters)
 
 findByEmail(String email);
 
 * inside the repository layer
+
+1. OnetOne (Address) - FetchType.EAGER
+2. ManyToOne (department) - FetchType.EAGER
+3. ManyToMany (projects) - FetchType.LAZY
+4. OneToMany - FetchType.LAZY
+
+FetchType.LAZY:
+===============
+1. @Transactional - multiple DB operation at sam time
+2. Join FETCH - best way to avoid lazy loading
