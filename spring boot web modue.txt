@@ -19,4 +19,24 @@ xmlns:th="http://www.thymeleaf.org" inside html tag
 2. mapper
 3. builder
 
+Validation:
+===========
+
+
+1. 
+@NotBlank
+@NotEmpty
+@Email
+@Max
+@Min
+@Size
+@pattern
+
 * to send errors to front end we use " BindingResult bindingResult"
+
+Print error in thymleaf:
+========================
+<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red;"></p>
+
+
+2. you can make use of "Validation Groups".
