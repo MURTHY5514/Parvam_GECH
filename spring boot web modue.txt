@@ -40,3 +40,15 @@ Print error in thymleaf:
 
 
 2. you can make use of "Validation Groups".
+
+Template Inheritence:
+=====================
+* Fragments
+
+templates
+	about,home,contact
+	
+templates
+	fragments
+		header.html
+		footer.html
